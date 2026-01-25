@@ -344,7 +344,3 @@ F --> H[JSON API Clients]
 - Docker image tags
 - GitHub Actions CI/CD
 - Rollback-safe releases
-
-```text
-
-```
