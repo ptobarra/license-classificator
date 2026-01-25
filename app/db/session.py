@@ -1,0 +1,13 @@
+from sqlmodel import create_engine, Session, SQLModel
+from app.core.config import settings
+
+engine = create_engine(f"sqlite:///{settings.sqlite_path}", echo=False)
+
+
+def init_db() -> None:
+    SQLModel.metadata.create_all(engine)
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session
