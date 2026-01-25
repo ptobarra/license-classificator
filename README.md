@@ -256,14 +256,14 @@ Read Excel → Normalize → Upsert DB
 For each License:
 ├─ If manual → skip LLM
 └─ Else → Send to Ollama
-│
-▼
+            │
+            ▼
 LLM returns JSON
-│
-▼
+            │
+            ▼
 Validate + Persist Result
-│
-▼
+            │
+            ▼
 Export output.xlsx
 │
 ▼
@@ -286,17 +286,20 @@ D --> C
 C --> F[FastAPI Endpoints]
 F --> G[output.xlsx]
 F --> H[JSON API Clients]
+```
 
 ## Scaling Strategy (Strategic Bonus)
 
 ### How Would This Scale to 10,000 Licenses / Day?
 
 #### Compute & Throughput
+
 - Batch inference instead of single calls
 - Async worker pools (Celery / RQ)
 - Horizontal FastAPI autoscaling
 
 #### System Design
+
 - Queue ingestion (Kafka / RabbitMQ)
 - Result caching for duplicate licenses
 - Dedicated LLM inference workers
@@ -308,12 +311,14 @@ F --> H[JSON API Clients]
 ## Using Embeddings Instead of Direct Prompting
 
 ### Upgraded Pipeline
+
 - Generate embeddings for each license name
 - Store vectors in **Qdrant / FAISS / Pinecone**
 - Classify via **nearest-neighbor semantic similarity**
 - Use LLM only for **low-confidence cases**
 
 ### Benefits
+
 - Faster inference
 - Lower cost
 - Deterministic outputs
@@ -324,16 +329,22 @@ F --> H[JSON API Clients]
 ## Service & Model Versioning Strategy
 
 ### API Versioning
+
 - `/v1/classify`
 - `/v2/classify`
 
 ### Model & Prompt Versioning
+
 - Track prompt templates in Git
 - Log LLM model hashes
 - Store inference metadata
 
 ### Deployment Versioning
+
 - Docker image tags
 - GitHub Actions CI/CD
 - Rollback-safe releases
+
+```
+
 ```
