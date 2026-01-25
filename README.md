@@ -345,6 +345,6 @@ F --> H[JSON API Clients]
 - GitHub Actions CI/CD
 - Rollback-safe releases
 
-```
+```text
 
 ```
