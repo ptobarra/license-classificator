@@ -189,51 +189,52 @@ Unit test baseline provided with roadmap for expansion.
 
 ### High-Level System Architecture
 
+````text
 ┌──────────────────┐
-│ licenses.xlsx │
+│   licenses.xlsx  │
 └─────────┬────────┘
-│ (Ingest)
-▼
+          │  (Ingest)
+          ▼
 ┌──────────────────────────┐
-│ Excel I/O Service │
-│ (Pandas + Validation) │
+│  Excel I/O Service       │
+│  (Pandas + Validation)   │
 └─────────┬────────────────┘
-│ (Persist)
-▼
+          │  (Persist)
+          ▼
 ┌──────────────────────────┐
-│ SQLite (SQLModel ORM) │
-│ - Raw licenses │
-│ - Typology │
-│ - Explanation │
-│ - Decision source │
+│ SQLite (SQLModel ORM)   │
+│ - Raw licenses           │
+│ - Typology               │
+│ - Explanation            │
+│ - Decision source        │
 └─────────┬────────────────┘
-│ (Query)
-▼
+          │  (Query)
+          ▼
 ┌──────────────────────────┐
-│ Classification Service │
-│ - Business rules │
-│ - Manual override guard │
+│ Classification Service   │
+│ - Business rules         │
+│ - Manual override guard  │
 └─────────┬────────────────┘
-│ (Inference)
-▼
+          │  (Inference)
+          ▼
 ┌──────────────────────────┐
-│ Ollama LLM Client │
-│ - Prompt templating │
-│ - Output validation │
+│ Ollama LLM Client        │
+│ - Prompt templating      │
+│ - Output validation      │
 └─────────┬────────────────┘
-│
-▼
+          │
+          ▼
 ┌──────────────────────────┐
-│ FastAPI Layer │
-│ - /classify │
-│ - /licenses │
-│ - /licenses/{id} PATCH │
+│ FastAPI Layer            │
+│ - /classify              │
+│ - /licenses              │
+│ - /licenses/{id} PATCH   │
 └─────────┬────────────────┘
-│
-▼
+          │
+          ▼
 ┌──────────────────────────┐
-│ output/output.xlsx │
-│ + API JSON Responses │
+│ output/output.xlsx       │
+│ + API JSON Responses     │
 └──────────────────────────┘
 
 ---
@@ -332,4 +333,4 @@ F --> H[JSON API Clients]
 - Docker image tags
 - GitHub Actions CI/CD
 - Rollback-safe releases
-```
+````
