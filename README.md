@@ -241,6 +241,7 @@ Unit test baseline provided with roadmap for expansion.
 
 ### End-to-End Data Flow (Request Lifecycle)
 
+```text
 Client
 │
 │ POST /classify
