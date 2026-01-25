@@ -202,7 +202,7 @@ Unit test baseline provided with roadmap for expansion.
           │  (Persist)
           ▼
 ┌──────────────────────────┐
-│ SQLite (SQLModel ORM)   │
+│ SQLite (SQLModel ORM)    │
 │ - Raw licenses           │
 │ - Typology               │
 │ - Explanation            │
