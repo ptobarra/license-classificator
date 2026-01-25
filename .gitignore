@@ -1,16 +1,18 @@
-# Python
-.venv/
+# Python bytecode
 __pycache__/
 *.pyc
 
-# Local DB
-app.db
+# Pytest cache
+.pytest_cache/
 
-# Output files
-# output/
+# Virtual environments
+.venv/
 
 # Environment
 .env
+
+# Local DB
+app.db
 
 # OS
 .DS_Store
