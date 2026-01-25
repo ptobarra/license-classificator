@@ -7,7 +7,7 @@ __pycache__/
 app.db
 
 # Output files
-output/
+# output/
 
 # Environment
 .env
