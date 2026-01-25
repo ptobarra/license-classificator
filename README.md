@@ -189,7 +189,7 @@ Unit test baseline provided with roadmap for expansion.
 
 ### High-Level System Architecture
 
-````text
+```text
 ┌──────────────────┐
 │   licenses.xlsx  │
 └─────────┬────────┘
@@ -236,6 +236,7 @@ Unit test baseline provided with roadmap for expansion.
 │ output/output.xlsx       │
 │ + API JSON Responses     │
 └──────────────────────────┘
+```
 
 ---
 
@@ -335,4 +336,4 @@ F --> H[JSON API Clients]
 - Docker image tags
 - GitHub Actions CI/CD
 - Rollback-safe releases
-````
+```
